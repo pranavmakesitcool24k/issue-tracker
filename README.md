@@ -1,4 +1,4 @@
-# Issue Tracker — Simple Project
+# Issue Tracker App
 
 View, search, sort, and manage issues with an easy web interface.  
 Built with FastAPI for the backend and React (Vite + TypeScript) for the frontend.  
