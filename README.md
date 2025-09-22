@@ -129,4 +129,4 @@ Try the following:
 
 ---
 
-Made by Pranav Pardeshi
+Made by Pranav Pardeshi ❤️
