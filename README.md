@@ -99,13 +99,6 @@ frontend/
 
 ---
 
-## Notes
-- The backend uses issues.json for storage. For production, a database like SQLite or PostgreSQL should be used.
-- The frontend has a clean, professional look with proper spacing and centered modal forms.
-- Footer displays: Made by Pranav Pardeshi
-
----
-
 ## How to Test the App
 1. Start the backend:
    ```powershell
