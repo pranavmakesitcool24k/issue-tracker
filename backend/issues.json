@@ -1,0 +1,35 @@
+{
+  "issues": [
+    {
+      "id": 1,
+      "title": "Server Issue",
+      "description": "Check the issue ",
+      "status": "open",
+      "priority": "high",
+      "assignee": "Pranav",
+      "createdAt": "2025-09-01T12:00:00Z",
+      "updatedAt": "2025-09-22T16:00:16.515150Z"
+    },
+    {
+      "title": "Database Issue",
+      "description": "Make changes in database",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "Narendra",
+      "id": 3,
+      "createdAt": "2025-09-22T16:01:05.935250Z",
+      "updatedAt": "2025-09-22T16:01:05.935250Z"
+    },
+    {
+      "title": "Hosting issue",
+      "description": "Change the domain",
+      "status": "closed",
+      "priority": "low",
+      "assignee": "Amit",
+      "id": 4,
+      "createdAt": "2025-09-22T16:01:42.340479Z",
+      "updatedAt": "2025-09-22T16:01:42.340479Z"
+    }
+  ],
+  "next_id": 6
+}
