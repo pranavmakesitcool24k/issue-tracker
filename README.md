@@ -1,95 +1,132 @@
-Issue Tracker — Simple Project
+# Issue Tracker — Simple Project
 
-View, search, sort, and manage issues with an easy web interface. Built with FastAPI for the backend and React (Vite + TypeScript) for the frontend.
+View, search, sort, and manage issues with an easy web interface.  
+Built with FastAPI for the backend and React (Vite + TypeScript) for the frontend.  
+
+---
 
 ## Features
-
-- Shows all issues in a table, including columns for id, title, status, priority, assignee, and last updated
+- Issues table with columns: id, title, status, priority, assignee, updatedAt
 - Search by title or assignee
 - Filter by status, priority, or assignee
-- Sort any column
-- Supports pagination (page number and page size)
-- Add new issues using a modal form
+- Sort by clicking on any column header
+- Pagination (page number and page size)
+- Create new issues using a modal form
 - Edit existing issues
-- Delete issues quickly
-- Click any row to see full issue details in a drawer
+- Delete issues
+- Click a row to view full JSON details in a drawer  
 
-## Backend — FastAPI
+---
 
-### Running the backend
+## Backend — FastAPI  
 
-1. Open your terminal and navigate to the backend folder
-2. Create a virtual environment and activate it  
-   On Windows:
+### Running the backend  
+1. Open your terminal and go to the backend folder:
+   ```powershell
+   cd backend
+   ```
 
-   python -m venv .venv  
+2. Create and activate a virtual environment (Windows):
+   ```powershell
+   python -m venv .venv
    .venv\Scripts\activate
+   ```
 
-3. Install requirements:  
+3. Install dependencies:
+   ```powershell
    pip install -r requirements.txt
-4. Start the backend server:  
+   ```
+
+4. Start the backend server:
+   ```powershell
    uvicorn main:app --reload --port 8000
+   ```
 
-The backend runs on http://localhost:8000
+The backend runs at http://localhost:8000  
 
-For a quick health check, visit http://localhost:8000/health — should return:  
+Health check: http://localhost:8000/health  
+Returns:
+```json
 { "status": "ok" }
+```  
 
-## Frontend — React (Vite + TypeScript)
+---
 
-### Running the frontend
+## Frontend — React (Vite + TypeScript)  
 
-1. Open a new terminal and go to the frontend folder
-2. Install dependencies:  
+### Running the frontend  
+1. Open a new terminal and go to the frontend folder:
+   ```powershell
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```powershell
    npm install
-3. Start the frontend server:  
+   ```
+
+3. Start the dev server:
+   ```powershell
    npm run dev
+   ```
 
-The frontend is available at http://localhost:3000
+The frontend runs at http://localhost:3000  
 
-By default, it connects to the backend at http://localhost:8000.  
-If your backend is running elsewhere, set the API base address before starting:
-
-Windows PowerShell:  
+If your backend runs elsewhere, set the API base URL before starting:
+```powershell
 $env:VITE_API_BASE="http://localhost:8000"
+```
+
+---
 
 ## Project Structure
+```
+backend/
+  main.py          # FastAPI app with endpoints
+  issues.json      # JSON storage for issues
+  requirements.txt
 
-backend/  
-  main.py         # FastAPI app and endpoints  
-  issues.json     # JSON storage for issues  
-  requirements.txt
+frontend/
+  src/
+    api.ts         # API client
+    App.tsx        # App layout (header, footer, description)
+    components/
+      IssuesList.tsx   # Issues list with search, filters, sorting, pagination
+      IssueDetail.tsx  # Drawer to show full JSON
+      IssueForm.tsx    # Modal form (create/edit)
+  vite.config.ts
+```
 
-frontend/  
-  src/  
-    api.ts           # API client  
-    App.tsx          # App layout  
-    components/  
-      IssuesList.tsx    # List and table  
-      IssueDetail.tsx   # Detail drawer  
-      IssueForm.tsx     # Modal form  
-  vite.config.ts
+---
 
 ## Notes
+- The backend uses issues.json for storage. For production, a database like SQLite or PostgreSQL should be used.
+- The frontend has a clean, professional look with proper spacing and centered modal forms.
+- Footer displays: Made by Pranav Pardeshi
 
-- The backend uses issues.json to store data. For real production use, this would be a proper database like SQLite or PostgreSQL
-- The frontend is designed to have a clean, professional look with good spacing and colors
-- Modal forms are centered
-- The footer says: Made by Pranav Pardeshi
+---
 
-## How to Test
+## How to Test the App
+1. Start the backend:
+   ```powershell
+   uvicorn main:app --reload --port 8000
+   ```
 
-1. Start the backend (uvicorn main:app --reload --port 8000)
-2. Start the frontend (npm run dev)
-3. Go to http://localhost:3000
+2. Start the frontend:
+   ```powershell
+   npm run dev
+   ```
 
-Try these features:
+3. Open http://localhost:3000
 
-- Search by title or assignee
+Try the following:
+- Search issues by title or assignee
 - Filter by status, priority, or assignee
-- Sort by clicking on headers
-- Change pages with pagination
+- Sort columns by clicking headers
+- Use pagination controls
 - Create, edit, and delete issues
-- Click a row to see detailed issue info
+- Click a row to see detailed issue information
+
+---
 
 Made by Pranav Pardeshi
